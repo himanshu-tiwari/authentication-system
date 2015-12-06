@@ -7,6 +7,7 @@ use Slim\Views\TwigExtension;
 use Noodlehaus\Config;
 
 use project\User\User;
+use project\Helpers\Hash;
 
 session_cache_limiter(false);
 session_start();
@@ -33,6 +34,10 @@ require 'routes.php';
 
 $app->container->set('user', function(){
 	return new User;
+});
+
+$app->container->singleton('hash', function() use($app){
+	return new Hash($app->config);
 });
 
 $app->get('/', function() use($app){
