@@ -26,7 +26,7 @@ return[
            'smtp_auth' => true,
            'smtp_secure' => 'tls',
            'host' => 'smtp.gmail.com',
-           'username' => 'htiwarih@gmail.com',
+           'username' => 'htiwarih0@gmail.com',
            'password' => '455111781',
            'port' => 587,
            'html' => true
