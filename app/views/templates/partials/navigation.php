@@ -8,7 +8,7 @@
    </li>
 
    {% if auth %}
-
+   	   <li><a href = "{{ urlFor('logout')}}">Log Out</a></li>
    {% else %}
 	   <li>
 	      <a href = "{{ urlFor('register') }}">Register</a>
