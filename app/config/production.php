@@ -2,7 +2,7 @@
 
 return[
      'app' => [
-          'url' => 'http://localhost:8080',
+          'url' => 'https://polar-mesa-8063.herokuapp.com',
           'hash' =>[
                'algo' => PASSWORD_BCRYPT,
                'cost' => 10
@@ -12,8 +12,8 @@ return[
           'driver' => 'mysql',
           'host' => '127.0.0.1',
           'name' => 'site',
-          'username' => 'root',
-     	    'password' => 'test123',
+          'username' => '',
+     	    'password' => '',
           'charset' => 'utf8',
           'collation' => 'utf8_unicode_ci',
           'prefix' => ''
