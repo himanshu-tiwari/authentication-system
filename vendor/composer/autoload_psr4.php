@@ -10,7 +10,6 @@ return array(
     'Violin\\' => array($vendorDir . '/alexgarrett/violin/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
-    'Stringy\\' => array($vendorDir . '/danielstjules/stringy/src'),
     'Slim\\Views\\' => array($vendorDir . '/slim/views'),
     'Noodlehaus\\' => array($vendorDir . '/hassankhan/config/src'),
     'Illuminate\\Support\\' => array($vendorDir . '/illuminate/support'),
