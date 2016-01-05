@@ -17,24 +17,29 @@ class User extends Eloquent{
         'remember_token',
 	];
 
-        public function getFullName(){
-                if(!$this->first_name || !$this->last_name){
-                        return null;
-                }
+    public function getFullName(){
+            if(!$this->first_name || !$this->last_name){
+                    return null;
+            }
 
-                return "{$this->first_name} {$this->last_name}";
-        }
+            return "{$this->first_name} {$this->last_name}";
+    }
 
-        public function getFullNameOrUsername(){
-                return $this->getFullName() ?: $this->username;
-        }
+    public function getFullNameOrUsername(){
+            return $this->getFullName() ?: $this->username;
+    }
 
-        public function activateAccount(){
-                $this->update([
-                        'active' => true,
-                        'active_hash' => null
-                ]);
-       }
+    public function activateAccount(){
+            $this->update([
+                    'active' => true,
+                    'active_hash' => null
+            ]);
+   }
+
+   public function getAvatarUrl($options = []){
+            $size = isset($options['size']) ? $options['size'] : 45;
+            return 'http://www.gravatar.com/avatar/'.md5($this->email).'?s='.$size.'&d=mm';
+   }
 }
 
 ?>
