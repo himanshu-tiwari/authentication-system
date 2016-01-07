@@ -10,7 +10,8 @@
    </li>
 
    {% if auth %}
-   	   <li><a href = "{{ urlFor('logout')}}">Log Out</a></li>
+   	   <li><a href = "{{ urlFor('logout') }}">Log Out</a></li>
+   	   <li><a href="{{ urlFor('user.profile', {username: auth.username}) }}">Your Profile</a></li>
    {% else %}
 	   <li>
 	      <a href = "{{ urlFor('register') }}">Register</a>

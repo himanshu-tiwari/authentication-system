@@ -3,7 +3,7 @@
 <html>
      <head>
           <meta charset = "UTF-8">
-          <title>Website|{% block title %}{% endblock %}</title>
+          <title>Website | {% block title %}{% endblock %}</title>
      </head>    
      <body>
      	  {% include 'templates/partials/messages.php' %}
