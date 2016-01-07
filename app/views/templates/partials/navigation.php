@@ -12,7 +12,11 @@
    {% if auth %}
    	   <li><a href = "{{ urlFor('logout') }}">Log Out</a></li>
    	   <li><a href="{{ urlFor('user.profile', {username: auth.username}) }}">Your Profile</a></li>
-   	   
+         
+         {% if auth.isAdmin %}
+            <li> <a href="{{ urlFor('admin.example') }}">Admin Area</a> </li>
+   	   {% endif %}
+
    	   <form action="{{ urlFor('user.search.post') }}" method="post">
     		<input type="search" name="user_search" placeholder="Search..." id="search">
 		    <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">

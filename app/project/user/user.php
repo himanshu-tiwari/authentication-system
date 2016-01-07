@@ -55,6 +55,18 @@ class User extends Eloquent{
    public function searchQuery($value)  {
             return $user = $this->where('username', 'LIKE' , '%' .$value. '%')->get();
    }
+
+   public function hasPermission($permission){
+            return (bool) $this->permissions->{$permission};
+   }
+
+   public function isAdmin(){
+            return $this->hasPermission('is_admin');
+   }
+
+   public function permissions(){
+            return $this->hasOne('project\User\UserPermission', 'user_id');
+   }
 }
 
 ?>

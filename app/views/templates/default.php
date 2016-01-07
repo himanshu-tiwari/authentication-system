@@ -8,6 +8,7 @@
      <body>
      	  {% include 'templates/partials/messages.php' %}
      	  {% include 'templates/partials/navigation.php' %}
+     	  {% include 'templates/partials/level.php' %}
           {% block content %}{% endblock %}
      </body>
 </html>
