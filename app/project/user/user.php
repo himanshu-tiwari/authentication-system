@@ -51,6 +51,10 @@ class User extends Eloquent{
    public function removeRememberCredentials(){
             $this->updateRememberCredentials(null, null);
    }
+
+   public function searchQuery($value)  {
+            return $user = $this->where('username', 'LIKE' , '%' .$value. '%')->get();
+   }
 }
 
 ?>
