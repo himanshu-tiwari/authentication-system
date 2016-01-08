@@ -13,7 +13,7 @@ class UserPermission extends Eloquent{
 
 	public static $defaults = [
 		'is_admin' => false,
-		'can_access_level1' => false,
+		'can_access_level1' => true,
 		'can_access_level2' => false,
 		'can_access_level3' => false,
 	];

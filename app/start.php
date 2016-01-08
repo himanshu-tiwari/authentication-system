@@ -27,7 +27,7 @@ require INC_ROOT.'/vendor/autoload.php';
 
 $app = new Slim([
    'mode' => file_get_contents(INC_ROOT.'/mode.php'),
-   'view' =>new Twig(),
+   'view' => new Twig(),
    'templates.path' => INC_ROOT.'/app/views'
 ]);
 
@@ -35,7 +35,7 @@ $app->add(new BeforeMiddleware);
 $app->add(new CsrfMiddleware);
 
 $app->configureMode($app->config('mode'), function() use($app){
-    $app->config =Config::load(INC_ROOT."/app/config/{$app->mode}.php");
+    $app->config = Config::load(INC_ROOT."/app/config/{$app->mode}.php");
 });
 
 require 'database.php';
@@ -53,7 +53,7 @@ $app->container->singleton('hash', function() use($app){
 });
 
 $app->container->singleton('validation', function()use($app){
-	return new Validator($app->user);
+	return new Validator($app->user, $app->hash, $app->auth);
 });
 
 $app->container->singleton('mail', function() use($app){

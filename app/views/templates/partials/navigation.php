@@ -10,28 +10,30 @@
    </li>
 
    {% if auth %}
-   	   <li><a href = "{{ urlFor('logout') }}">Log Out</a></li>
+   	   <li><a href = "{{ urlFor('auth.logout') }}">Log Out</a></li>
    	   <li><a href="{{ urlFor('user.profile', {username: auth.username}) }}">Your Profile</a></li>
          
+         <li><a href="{{ urlFor('levels') }}">Lets Play</a></li>
+
          {% if auth.isAdmin %}
             <li> <a href="{{ urlFor('admin.example') }}">Admin Area</a> </li>
    	   {% endif %}
 
    	   <form action="{{ urlFor('user.search.post') }}" method="post">
-    		<input type="search" name="user_search" placeholder="Search..." id="search">
-		    <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">
-	   </form> 
+    		   <input type="search" name="user_search" placeholder="Search..." id="search">
+		      <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">
+	      </form> 
+
+         <li>
+               <a href="{{ urlFor('user.all') }}">All Users</a>
+         </li>
 
    {% else %}
 	   <li>
-	      <a href = "{{ urlFor('register') }}">Register</a>
+	      <a href = "{{ urlFor('auth.register') }}">Register</a>
 	   </li>
 	   <li>
-	      <a href = "{{ urlFor('login') }}">Login</a>
+	      <a href = "{{ urlFor('auth.login') }}">Login</a>
 	   </li>
    {% endif %}
-
-   <li>
-   	   <a href="{{ urlFor('user.all') }}">All Users</a>
-   </li>
 </ul>

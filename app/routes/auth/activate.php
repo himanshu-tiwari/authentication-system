@@ -22,6 +22,6 @@ $app->get('/activate', $guest(), function() use($app){
 
 	}
 
-})->name('activate');
+})->name('auth.activate');
 
 ?>

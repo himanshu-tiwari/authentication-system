@@ -1,4 +1,4 @@
-{% if auth %}
+{% if auth.getFullNameOrUsername() %}
 	<p>Hello {{ auth.getFullNameOrUsername() }}!</p>
 {% else %}
 	<p>Hello there!</p>

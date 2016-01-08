@@ -3,7 +3,7 @@ use project\User\UserPermission;
 
 $app->get('/register', $guest(), function()use($app){
     $app->render('auth/register.php');
-})->name('register');
+})->name('auth.register');
 
 $app->post('/register', $guest(), function() use($app){
 	$request = $app->request;
@@ -50,6 +50,6 @@ $app->post('/register', $guest(), function() use($app){
 	]);
 
 
-})->name('register.post');
+})->name('auth.register.post');
 
 ?>
