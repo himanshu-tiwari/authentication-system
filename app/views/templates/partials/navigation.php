@@ -10,7 +10,7 @@
    </li>
 
    {% if auth %}
-   	   <li><a href = "{{ urlFor('auth.logout') }}">Log Out</a></li>
+   	   <li><a href = "{{ urlFor('logout') }}">Log Out</a></li>
    	   <li><a href="{{ urlFor('user.profile', {username: auth.username}) }}">Your Profile</a></li>
          
          <li><a href="{{ urlFor('levels') }}">Lets Play</a></li>
@@ -30,10 +30,10 @@
 
    {% else %}
 	   <li>
-	      <a href = "{{ urlFor('auth.register') }}">Register</a>
+	      <a href = "{{ urlFor('register') }}">Register</a>
 	   </li>
 	   <li>
-	      <a href = "{{ urlFor('auth.login') }}">Login</a>
+	      <a href = "{{ urlFor('login') }}">Login</a>
 	   </li>
    {% endif %}
 </ul>

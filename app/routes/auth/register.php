@@ -3,7 +3,7 @@ use project\User\UserPermission;
 
 $app->get('/register', $guest(), function()use($app){
     $app->render('auth/register.php');
-})->name('auth.register');
+})->name('register');
 
 $app->post('/register', $guest(), function() use($app){
 	$request = $app->request;
@@ -40,7 +40,7 @@ $app->post('/register', $guest(), function() use($app){
     		$message->subject('Thanks for Registering.');
     	});
 
-    	$app->flash('global', 'Congrats! You\'re registered');
+    	$app->flash('global', 'Congrats! You\'re registered. An Email has been sent to your account. Kindly follow the given instructions to activate your account.');
         $app->response->redirect($app->urlFor('home'));
 	}
 
@@ -50,6 +50,6 @@ $app->post('/register', $guest(), function() use($app){
 	]);
 
 
-})->name('auth.register.post');
+})->name('register.post');
 
 ?>

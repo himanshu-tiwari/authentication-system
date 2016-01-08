@@ -4,7 +4,7 @@
 
 {% block content %}
 
-	<form action="{{ urlFor('auth.password.change.post') }}" method="post" autocomplete="off">
+	<form action="{{ urlFor('password.change.post') }}" method="post" autocomplete="off">
 		<div>
 			<label for="password_old">Old Password</label>
 			<input type="password" name="password_old" id="password_old">

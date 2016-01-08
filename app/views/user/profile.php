@@ -16,6 +16,6 @@
 		<dd>{{ user.email }}</dd>
 	</dl>
 
- 	<li><a href="{{ urlFor('auth.password.change') }}">Change Password</a></li>
+ 	<li><a href="{{ urlFor('password.change') }}">Change Password</a></li>
 
 {% endblock %}

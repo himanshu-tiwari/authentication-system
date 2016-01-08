@@ -4,7 +4,7 @@ use Carbon\Carbon;
 
 $app->get('/login', $guest(), function() use($app){
 	$app->render('auth/login.php');
-})->name('auth.login');
+})->name('login');
 
 $app->post('/login', $guest(), function() use($app){
 	$request = $app->request;
@@ -61,6 +61,6 @@ $app->post('/login', $guest(), function() use($app){
 		'request'=>$request
 	]);
 
-})->name('auth.login.post');
+})->name('login.post');
 
 ?>

@@ -4,10 +4,10 @@
 
 {% block content %}
 
-<form action = "{{ urlFor('auth.register.post') }}" method = "post" autocomplete = "off">
+<form action = "{{ urlFor('register.post') }}" method = "post" autocomplete = "off">
 	<div>
 		<label for = "email">Email</label>
-		<input type = "text" name = "email" id = "email" {% if request.post('email') %}value = "{{ request.post('email') }}" {% endif %}>
+		<input type = "text" name = "email" id = "email" {% if request.post('email') %} value="{{ request.post('email') }}" {% endif %}>
 		{% if errors.has('email') %}{{ errors.first('email') }}{% endif %}
 	</div>
 

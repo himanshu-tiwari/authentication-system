@@ -8,7 +8,10 @@ class UserPermission extends Eloquent{
 	protected $table = 'users_permissions';
 
 	protected $fillable = [
-		'is_admin'
+		'is_admin',
+		'can_access_level1',
+		'can_access_level2',
+		'can_access_level3'
 	];
 
 	public static $defaults = [

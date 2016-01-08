@@ -2,7 +2,7 @@
 
 $app->get('/change-password', $authenticated(), function() use($app){
 	$app->render('auth/password/change.php');
-})->name('auth.password.change');
+})->name('password.change');
 
 $app->post('/change-password', $authenticated(), function() use($app){
 	$request = $app->request;
@@ -38,6 +38,6 @@ $app->post('/change-password', $authenticated(), function() use($app){
 	$app->render('auth/password/change.php', [
 		'errors' => $v->errors()
 	]);
-})->name('auth.password.change.post');
+})->name('password.change.post');
 
 ?>
