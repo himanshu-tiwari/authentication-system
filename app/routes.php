@@ -17,4 +17,6 @@ require INC_ROOT.'/app/routes/levels/level1.php';
 require INC_ROOT.'/app/routes/levels/level2.php';
 require INC_ROOT.'/app/routes/levels/level3.php';
 
+require INC_ROOT.'/app/routes/errors/404.php';
+
 ?>
