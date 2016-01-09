@@ -11,11 +11,14 @@ class User extends Eloquent{
         'email',
         'username',
         'password',
+        'first_name',
+        'last_name',
         'active',
         'active_hash',
         'recover_hash',
         'remember_identifier',
         'remember_token',
+        'logged_in'
 	];
 
     public function getFullName(){
@@ -67,6 +70,34 @@ class User extends Eloquent{
 
    public function permissions(){
             return $this->hasOne('project\User\UserPermission', 'user_id');
+   }
+
+   public function isThisUser($value){
+            if($this->user == $value){
+              return true;
+            }
+            else{
+              //echo $value;
+              echo $this->user;
+              return false;
+            }
+   }
+
+   public function isLoggedIn(){
+            return $this->logged_in;
+   }
+
+   public function updateLogInStatus(){
+            if($this->logged_in == 1){
+                $this->update([
+                  'logged_in' => false
+                ]);
+            }
+            else{
+              $this->update([
+                'logged_in' =>true
+              ]);
+            }
    }
 }
 

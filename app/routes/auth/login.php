@@ -27,6 +27,8 @@ $app->post('/login', $guest(), function() use($app){
 		        ->where('active', true)
 		        ->first();
 
+		$user->updateLogInStatus();
+
 		if($user && $app->hash->passwordCheck($password, $user->password)){
 			$_SESSION[$app->config->get('auth.session')] = $user->id;
 			

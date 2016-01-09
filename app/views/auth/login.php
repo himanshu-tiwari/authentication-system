@@ -9,7 +9,6 @@
   		<label for = "identifier">Username/Email</label>
   		<input type = "text" name = "identifier" id = "identifier" {% if request.post('identifier') %} value="{{ request.post('identifier') }}" {% endif %}>
       {% if errors.has('identifier') %}{{ errors.first('identifier') }}{% endif %}
-
   	</div>
   	<div>
   		<label for = "password">Password</label>

@@ -15,7 +15,11 @@
 		<dt>Email</dt>
 		<dd>{{ user.email }}</dd>
 	</dl>
+    
+    {% if auth %}
+ 		<li><a href="{{ urlFor('password.change') }}">Change Password</a></li>
 
- 	<li><a href="{{ urlFor('password.change') }}">Change Password</a></li>
+ 		<li><a href="{{ urlFor('account.profile') }}">Update Profile</a></li> 
+ 	{% endif %}
 
 {% endblock %}
