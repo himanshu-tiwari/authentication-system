@@ -23,9 +23,9 @@ return[
            'remember' => 'user_r'
       ],
       'mail' =>[
-           'secret' => 'key-476072bc39befde93ba249e16ffd3443',
-           'domain' => 'sandbox1425eb5c92ca46a1b0cdc631f5785508.mailgun.org',
-           'from' => 'Mailgun Sandbox <postmaster@sandbox1425eb5c92ca46a1b0cdc631f5785508.mailgun.org>',
+           'secret' => '',
+           'domain' => '',
+           'from' => '',
       ],
       'twig' =>[
            'debug' => true
