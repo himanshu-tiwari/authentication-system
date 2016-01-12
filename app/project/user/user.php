@@ -18,8 +18,16 @@ class User extends Eloquent{
         'recover_hash',
         'remember_identifier',
         'remember_token',
-        'logged_in'
+        'profile_id'
 	];
+
+    public function isMyId($profile_id){
+            if($this->id === $profile_id){
+                    return true;
+            }
+
+            return false;
+    }
 
     public function getFullName(){
             if(!$this->first_name || !$this->last_name){
