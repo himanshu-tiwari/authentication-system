@@ -41,7 +41,7 @@ $app->post('/register', $guest(), function() use($app){
     	});
 
     	$app->flash('global', 'Congrats! You\'re registered. An Email has been sent to your account. Kindly follow the given instructions to activate your account.');
-        $app->response->redirect($app->urlFor('home'));
+        return $app->response->redirect($app->urlFor('home'));
 	}
 
 	$app->render('auth/register.php', [

@@ -32,7 +32,7 @@ $app->post('/change-password', $authenticated(), function() use($app){
 		});
 
 		$app->flash('global', 'Your password has been updated!');
-		$app->response->redirect($app->urlFor('home'));
+		return $app->response->redirect($app->urlFor('home'));
 	}
 
 	$app->render('auth/password/change.php', [

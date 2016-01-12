@@ -20,7 +20,7 @@ $app->post('/recover-password', $guest(), function() use($app){
 
 		if(!$user){
 			$app->flash('global', 'Could not find that user!');
-			$app->response->redirect($app->urlFor('password.recover'));
+			return $app->response->redirect($app->urlFor('password.recover'));
 		}
 		else{
 			$identifier = $app->randomlib->generateString(128);
@@ -34,10 +34,8 @@ $app->post('/recover-password', $guest(), function() use($app){
 				'recover_hash' => $app->hash->hash($identifier)
 			]);
 
-
-
 			$app->flash('global', 'An Email has been sent to your account. Kindly follow the given instructions to reset your password.');
-			$app->response->redirect($app->urlFor('home'));
+			return $app->response->redirect($app->urlFor('home'));
 		}
 	}
 

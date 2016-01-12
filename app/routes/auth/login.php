@@ -21,11 +21,11 @@ $app->post('/login', $guest(), function() use($app){
 
 	if($v->passes()){
 		$user = $app->user
-		        ->where('username', $identifier)
-		        ->where('active', true)
-		        ->orWhere('email', $identifier)
-		        ->where('active', true)
-		        ->first();
+				->where('active', true)
+				->where(function($query) use($identifier){
+					return $query->where('username', $identifier)
+						->orWhere('email', $identifier);
+				})->first();
 
 		$user->updateLogInStatus();
 
@@ -49,12 +49,12 @@ $app->post('/login', $guest(), function() use($app){
 			}
 
 			$app->flash('global', 'you are now signed in!');
-			$app->response->redirect($app->urlFor('home'));
+			return $app->response->redirect($app->urlFor('home'));
 		}
 
 		else{
 			$app->flash('global', 'Sorry, you couldn\'t be logged in.');
-			$app->response->redirect($app->urlFor('login'));
+			return $app->response->redirect($app->urlFor('login'));
 		}
    	}
 
