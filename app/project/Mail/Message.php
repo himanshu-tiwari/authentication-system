@@ -10,15 +10,19 @@ class Message{
 	}
 
 	public function to($address){
-		$this->mailer->addAddress($address);
+		$this->mailer->addToRecipient($address);
 	}
 
 	public function subject($subject){
-		$this->mailer->Subject = $subject;
+		$this->mailer->setSubject($subject);
 	}
 
 	public function body($body){
-		$this->mailer->Body = $body;
+		$this->mailer->setHtmlBody($body);
+	}
+
+	public function from($address){
+		$this->mailer->setFromAddress($address);
 	}
 }
 

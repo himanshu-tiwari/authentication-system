@@ -23,13 +23,9 @@ return[
            'remember' => 'user_r'
       ],
       'mail' =>[
-           'smtp_auth' => true,
-           'smtp_secure' => 'tls',
-           'host' => 'smtp.gmail.com',
-           'username' => 'htiwarih0@gmail.com',
-           'password' => '455111781',
-           'port' => 587,
-           'html' => true
+           'secret' => 'key-476072bc39befde93ba249e16ffd3443',
+           'domain' => 'sandbox1425eb5c92ca46a1b0cdc631f5785508.mailgun.org',
+           'from' => 'Mailgun Sandbox <postmaster@sandbox1425eb5c92ca46a1b0cdc631f5785508.mailgun.org>',
       ],
       'twig' =>[
            'debug' => true

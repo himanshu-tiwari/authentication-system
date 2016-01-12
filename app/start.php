@@ -8,6 +8,7 @@ use Noodlehaus\Config;
 use RandomLib\Factory as RandomLib;
 
 use project\User\User;
+use Mailgun\Mailgun;
 use project\Mail\Mailer;
 use project\Helpers\Hash;
 use project\Validation\Validator;
@@ -57,20 +58,9 @@ $app->container->singleton('validation', function()use($app){
 });
 
 $app->container->singleton('mail', function() use($app){
-  $mailer = new PHPMailer;
+  $mailer = new Mailgun($app->config->get('mail.secret'));
 
-  $mailer->isSMTP();
-
-  $mailer->Host = $app->config->get('mail.host');
-  $mailer->SMTPAuth = $app->config->get('mail.smtp_auth');
-  $mailer->SMTPSecure = $app->config->get('mail.smtp_secure');
-  $mailer->Port = $app->config->get('mail.port');
-  $mailer->Username = $app->config->get('mail.username');
-  $mailer->Password = $app->config->get('mail.password');
-
-  $mailer->isHTML($app->config->get('mail.html'));
-
-  return new Mailer($app->view, $mailer);
+  return new Mailer($app->view, $app->config, $mailer);
 });
 
 $app->container->singleton('randomlib', function(){
